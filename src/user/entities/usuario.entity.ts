@@ -1,4 +1,4 @@
-import { IsDate } from 'class-validator';
+import { IsDate, IsEmail } from 'class-validator';
 import {
   Column,
   CreateDateColumn,
@@ -8,12 +8,12 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class User {
+export class Usuario {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @IsEmail()
   @Column({ unique: true })
-  @Column()
   email: string;
 
   @Column({ length: 255 })
@@ -24,7 +24,8 @@ export class User {
 
   @Column()
   @IsDate()
-  birthday: Date;
+  @Column({ type: 'date', nullable: true })
+  birthday?: Date;
 
   @CreateDateColumn()
   createdAt?: Date;

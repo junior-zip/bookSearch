@@ -1,25 +1,23 @@
 import { Injectable, ConflictException } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-//import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './entities/user.entity';
+import { CreateUsuarioDto } from './dto/create-usuario.dto';
+//import { UpdateUsuarioDto } from './dto/update-user.dto';
+import { Usuario } from './entities/usuario.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
-export class UserService {
+export class UsuariosService {
   constructor(
-    @InjectRepository(User)
-    private readonly userRepository: Repository<User>,
+    @InjectRepository(Usuario)
+    private readonly userRepository: Repository<Usuario>,
   ) {}
 
-  async create(createUserDto: CreateUserDto) {
+  async create(createUserDto: CreateUsuarioDto) {
     try {
       const createUser = {
         name: createUserDto.name,
         email: createUserDto.email,
         password: createUserDto.password,
-        birthday: createUserDto.birthday,
-        cpf: createUserDto.cpf,
       };
 
       const newUser = this.userRepository.create(createUser);
@@ -44,7 +42,7 @@ export class UserService {
     return `This action returns a #${id} user`;
   }
   /*
-  update(id: number, updateUserDto: UpdateUserDto) {
+  update(id: number, updateUserDto: UpdateUsuarioDto) {
     return `This action updates a #${id} user`;
   }
   */

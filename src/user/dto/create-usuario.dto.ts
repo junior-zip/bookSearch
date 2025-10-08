@@ -4,10 +4,9 @@ import {
   IsString,
   MinLength,
   MaxLength,
-  IsDate,
 } from 'class-validator';
 
-export class CreateUserDto {
+export class CreateUsuarioDto {
   @IsString()
   @IsNotEmpty()
   @MinLength(5)
@@ -21,11 +20,4 @@ export class CreateUserDto {
   @IsNotEmpty()
   @MinLength(5)
   password: string;
-
-  @IsDate()
-  birthday: Date;
-
-  @IsString()
-  @IsNotEmpty()
-  cpf: string;
 }
