@@ -3,13 +3,13 @@ import {
   Get,
   Post,
   Body,
-  //Patch,
+  Patch,
   Param,
   Delete,
 } from '@nestjs/common';
 import { UsuariosService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
-//import { UpdateUserDto } from './dto/update-user.dto';
+import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 
 @Controller('usuarios')
 export class UsuariosController {
@@ -30,14 +30,13 @@ export class UsuariosController {
     return this.userService.findOne(+id);
   }
 
-  /*
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.update(+id, updateUserDto);
+  update(@Param('id') id: number, @Body() updateusuarioDto: UpdateUsuarioDto) {
+    return this.userService.update(id, updateusuarioDto);
   }
-*/
+
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.userService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.userService.remove(id);
   }
 }
