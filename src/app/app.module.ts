@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsuarioModule } from '../usuario/usuario.module';
+import { LivrosModule } from '../livros/livros.module';
 import 'dotenv/config';
 
 @Module({
@@ -18,6 +19,7 @@ import 'dotenv/config';
       synchronize: true,
     }),
     UsuarioModule,
+    LivrosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
