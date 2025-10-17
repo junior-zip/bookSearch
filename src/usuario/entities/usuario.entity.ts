@@ -1,8 +1,10 @@
 import { IsDate, IsEmail } from 'class-validator';
+import { Recommendation } from 'src/recommendations/entities/recommendation.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -32,4 +34,7 @@ export class Usuario {
 
   @UpdateDateColumn()
   updatedAt?: Date;
+
+  @OneToMany(() => Recommendation, (recommendation) => recommendation.usuarioId)
+  recommendations: Recommendation[];
 }
