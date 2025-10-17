@@ -24,6 +24,14 @@ export class CreateLivroDto {
   @IsNumber()
   paginas: number;
 
+  @IsOptional()
+  @IsString()
+  imagem: string;
+
+  @IsOptional()
+  @IsNumber()
+  idadeMin: number;
+
   @IsString()
   @IsNotEmpty()
   descricao: string;

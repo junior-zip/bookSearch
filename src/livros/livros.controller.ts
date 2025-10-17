@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   Delete,
+  HttpCode,
+  HttpStatus,
 } from '@nestjs/common';
 import { LivrosService } from './livros.service';
 import { CreateLivroDto } from './dto/create-livro.dto';
@@ -19,15 +21,15 @@ export class LivrosController {
   create(@Body() createLivroDto: CreateLivroDto) {
     return this.livrosService.create(createLivroDto);
   }
-
+  @HttpCode(HttpStatus.OK)
   @Get()
   findAll() {
     return this.livrosService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.livrosService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.livrosService.findOne(id);
   }
 
   @Patch(':id')
