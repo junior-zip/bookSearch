@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   Delete,
+  HttpCode,
+  HttpStatus,
 } from '@nestjs/common';
 import { UsuariosService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
@@ -20,6 +22,7 @@ export class UsuariosController {
     return this.userService.create(createUserDto);
   }
 
+  @HttpCode(HttpStatus.OK)
   @Get()
   findAll() {
     return this.userService.findAll();

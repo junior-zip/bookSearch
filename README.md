@@ -96,3 +96,51 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+## Directory
+
+```
+├── .git/ 🚫 (auto-hidden)
+├── dist/ 🚫 (auto-hidden)
+├── node_modules/ 🚫 (auto-hidden)
+├── src/
+│   ├── app/
+│   │   ├── app.controller.ts
+│   │   ├── app.module.ts
+│   │   └── app.service.ts
+│   ├── common/
+│   │   ├── dto/
+│   │   │   └── pagination.dto.ts
+│   │   └── pipes/
+│   │       └── parse-int-id.pipe.ts
+│   ├── livros/
+│   │   ├── dto/
+│   │   │   ├── create-livro.dto.ts
+│   │   │   └── update-livro.dto.ts
+│   │   ├── entities/
+│   │   │   └── livro.entity.ts
+│   │   ├── livros.controller.ts
+│   │   ├── livros.module.ts
+│   │   └── livros.service.ts
+│   ├── usuario/
+│   │   ├── dto/
+│   │   │   ├── create-usuario.dto.ts
+│   │   │   └── update-usuario.dto.ts
+│   │   ├── entities/
+│   │   │   └── usuario.entity.ts
+│   │   ├── usuario.controller.ts
+│   │   ├── usuario.module.ts
+│   │   └── usuario.service.ts
+│   ├── .DS_Store 🚫 (auto-hidden)
+│   └── main.ts
+├── .env 🚫 (auto-hidden)
+├── .gitignore
+├── .prettierrc
+├── README.md
+├── eslint.config.mjs
+├── nest-cli.json
+├── package-lock.json
+├── package.json
+├── tsconfig.build.json 🚫 (auto-hidden)
+└── tsconfig.json
+```
