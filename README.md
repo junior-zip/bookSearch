@@ -23,6 +23,8 @@
 
 ## Description
 
+BookSearch é um projeto simples em sua finalidade: trazer interações rápidas e gameficadas para quem é apaixonado no mundo dos livros. 
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Project setup
