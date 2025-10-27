@@ -3,28 +3,36 @@ import { Usuario } from 'src/usuario/entities/usuario.entity';
 import {
   Column,
   CreateDateColumn,
+  Entity,
+  JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
+@Entity()
 export class Recommendation {
   @PrimaryGeneratedColumn()
   id: number;
 
   @ManyToOne(() => Usuario, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
-  usuarioId: Usuario;
+  @JoinColumn({ name: 'remetente' })
+  remetente: Usuario;
+
+  @ManyToOne(() => Usuario, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
+  @JoinColumn({ name: 'destinatario' })
+  destinatario: Usuario;
 
   @ManyToOne(() => Livro, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
-  @Column()
-  livroId: Livro;
+  @JoinColumn({ name: 'livroId' })
+  livro: Livro;
+
+  @Column({ type: 'text' })
+  recado: string;
 
   @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
-
-  @Column()
-  lido: string;
 }
