@@ -213,11 +213,30 @@ export class RecommendationsService {
       where: {
         id,
       },
+      relations: ['remetente', 'destinatario', 'livro'],
     });
 
     if (!findRecommendation)
       throw new BadRequestException('Recommendation is not found!');
 
-    return await this.recommendationRepository.remove(findRecommendation);
+    await this.recommendationRepository.remove(findRecommendation);
+
+    return {
+      livro: {
+        id: findRecommendation.livro.id,
+        titulo: findRecommendation.livro.titulo,
+        descricao: findRecommendation.livro.descricao,
+        paginas: findRecommendation.livro.paginas,
+        recado: findRecommendation.recado,
+      },
+      Remetente: {
+        id: findRecommendation.remetente.id,
+        name: findRecommendation.remetente.name,
+      },
+      Destinatario: {
+        id: findRecommendation.destinatario.id,
+        nome: findRecommendation.destinatario.name,
+      },
+    };
   }
 }
