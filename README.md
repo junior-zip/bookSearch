@@ -8,7 +8,7 @@
 
 ## Description
 
-#### BookSearch é uma aplicação pensada para o público leitor que está em busca de interação, indicação e controle de atividades de leitura.
+BookSearch é um projeto simples em sua finalidade: trazer interações rápidas e gameficadas para quem é apaixonado pelo mundo dos livros. 
 
 ## Project setup
 
