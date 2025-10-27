@@ -2,9 +2,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Recommendation } from 'src/recommendations/entities/recommendation.entity';
 
 @Entity()
 export class Livro {
@@ -43,4 +45,7 @@ export class Livro {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToMany(() => Recommendation, (recommendation) => recommendation.livro)
+  recommendation: Recommendation;
 }

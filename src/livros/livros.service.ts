@@ -76,6 +76,7 @@ export class LivrosService {
       select: {
         id: true,
         ISBN: true,
+        titulo: true,
         genero: true,
         paginas: true,
         dataPublicacao: true,
