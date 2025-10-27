@@ -35,6 +35,12 @@ export class Usuario {
   @UpdateDateColumn()
   updatedAt?: Date;
 
-  @OneToMany(() => Recommendation, (recommendation) => recommendation.usuarioId)
-  recommendations: Recommendation[];
+  @OneToMany(
+    () => Recommendation,
+    (recommendation) => recommendation.destinatario,
+  )
+  destinatario: Recommendation[];
+
+  @OneToMany(() => Recommendation, (recommendation) => recommendation.remetente)
+  remetente: Recommendation[];
 }

@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { UsuarioModule } from '../usuario/usuario.module';
 import { LivrosModule } from '../livros/livros.module';
 import 'dotenv/config';
+import { RecommendationsModule } from 'src/recommendations/recommendations.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import 'dotenv/config';
     }),
     UsuarioModule,
     LivrosModule,
+    RecommendationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

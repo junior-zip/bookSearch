@@ -8,11 +8,14 @@ import {
   Delete,
   HttpCode,
   HttpStatus,
+  UseInterceptors,
 } from '@nestjs/common';
 import { LivrosService } from './livros.service';
 import { CreateLivroDto } from './dto/create-livro.dto';
 import { UpdateLivroDto } from './dto/update-livro.dto';
+import { AddHeaderInterceptor } from 'src/common/interceptors/add-header.interceptor';
 
+@UseInterceptors(AddHeaderInterceptor)
 @Controller('livros')
 export class LivrosController {
   constructor(private readonly livrosService: LivrosService) {}
