@@ -41,20 +41,20 @@ export class RecommendationsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.recommendationsService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.recommendationsService.findOne(id);
   }
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id') id: number,
     @Body() updateRecommendationDto: UpdateRecommendationDto,
   ) {
-    return this.recommendationsService.update(+id, updateRecommendationDto);
+    return this.recommendationsService.update(id, updateRecommendationDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.recommendationsService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.recommendationsService.remove(id);
   }
 }
